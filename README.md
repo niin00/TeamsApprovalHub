@@ -1,8 +1,3 @@
-**Kort forklaring (NO):**
-Under finner du en komplett README i engelsk som du kan lime rett inn i repoet. Den beskriver formål, arkitektur, Dataverse-skjema, oppsett steg for steg, flyter, feilhåndtering, Power Apps, Power BI, sikkerhet, demo-manus, feilsøking og videre arbeid. Språket er praktisk og klart.
-
----
-
 # Teams Approval Hub
 
 A compact Power Platform solution that runs approvals directly in Microsoft Teams, logs every step to Dataverse for audit and KPIs, handles errors with retries, and gives a tiny Power Apps dashboard to reprocess failures. A one-minute demo shows end to end value: intake to approval to insight.
