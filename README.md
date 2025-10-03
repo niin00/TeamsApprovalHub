@@ -14,14 +14,10 @@ A compact Power Platform solution that runs approvals directly in Microsoft Team
 * [Power Automate flows](#power-automate-flows)
 * [Adaptive Card example](#adaptive-card-example)
 * [Power Apps mini dashboard](#power-apps-mini-dashboard)
-* [Power BI report](#power-bi-report)
-* [Security and roles](#security-and-roles)
 * [Demo script](#demo-script)
 * [Testing](#testing)
 * [Troubleshooting](#troubleshooting)
 * [Roadmap](#roadmap)
-* [How it maps to the company values](#how-it-maps-to-the-company-values)
-* [Repository structure](#repository-structure)
 * [License](#license)
 
 ---
@@ -278,7 +274,7 @@ Define these in the solution so you can move across environments without editing
 }
 ```
 
-In the flow, handle the submit payload with the “On card response” trigger and route by `decision`.
+the flow handles the submit payload with the “On card response” trigger and route by `decision`.
 
 ---
 
@@ -306,15 +302,6 @@ Filter(ApprovalLogs, RequestId = GalleryRequests.Selected.RequestId)
 
 ---
 
-## Power BI report
-
-**Recommended visuals**
-
-* KPI cards: Approval rate, Median approval time, SLA hit rate, Failure rate (last 7 and 30 days)
-* Line chart: Created vs Approved vs Rejected over time
-* Table: Open items with DueAt and traffic light status
-* Drill through page on a single Request with the raw ApprovalLogs JSON
-
 **Sample measures**
 
 ```DAX
@@ -341,19 +328,6 @@ DIVIDE(
     0
 )
 ```
-
----
-
-## Security and roles
-
-* **Azure AD group**: `Approvers` used by the approval connector or for Teams mentions
-* **Dataverse roles**:
-
-  * Requestor (create Requests)
-  * Approver (read Requests, write decision fields)
-  * Admin (all tables)
-* Use **Environment Variables** for channel and group ids
-* Consider **DLP** policies to keep connectors compliant
 
 ---
 
@@ -398,41 +372,7 @@ Duration: about 60 to 90 seconds.
 * AI Builder for extracting numbers from attached PDFs
 * Planner task creation for approved items
 * Data export to long term archive
-
----
-
-## How it maps to the company values
-
-* **Jordnærhet**: Solves a daily approval process with clear impact on workload and response times.
-* **Delingskultur**: Packaged as a reusable solution with environment variables and docs.
-* **Troverdighet**: Full audit trail and measurable SLAs.
-* **Entusiasme**: Clean Teams experience and a tiny app that makes ops feel in control.
-* **Frihet**: Switch intake source, channels, and SLA without code changes.
-
----
-
-## Repository structure
-
-```
-/
-├─ solution/
-│  └─ TeamsApprovalHub.zip
-├─ flows/
-│  ├─ submit_approve_screenshots/
-│  ├─ sla_escalation_screenshots/
-│  └─ retry_orchestrator_screenshots/
-├─ app/
-│  └─ ApprovalHubAdmin.msapp  (or export package)
-├─ powerbi/
-│  └─ ApprovalHub.pbix
-├─ docs/
-│  ├─ architecture.png
-│  └─ adaptive_card.json
-└─ data/
-   └─ samples/
-      └─ requests_sample.csv
-```
-
+  
 ---
 
 ## License
