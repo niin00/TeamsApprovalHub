@@ -34,14 +34,6 @@ Approvals are everywhere (small purchases, access requests, vacation). Many team
 **Solution**
 Teams Approval Hub turns a simple intake into a tracked approval inside Microsoft Teams. Every step is written to Dataverse for audit and KPIs. Errors are caught, logged, and retried. A small Power App lets an admin re-send failed items. A Power BI page shows approval time, SLA hit rate, and throughput.
 
-**What you will demonstrate**
-
-* Low code orchestration with **Power Automate**
-* Data modeling and auditability with **Dataverse**
-* Human in the loop approvals via **Teams Adaptive Cards**
-* Business insights and SLAs with **Power BI**
-* Operational robustness (try, catch, finally, retry, idempotency)
-
 ---
 
 ## Architecture
@@ -445,4 +437,3 @@ Duration: about 60 to 90 seconds.
 
 ## License
 
-MIT. See `LICENSE` file.
